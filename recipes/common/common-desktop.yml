@@ -44,14 +44,13 @@ modules:
 
   # ── Flatpak: Flathub setup + base apps ───────────────────────────────────
   - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      install:
-        - org.gnome.Loupe
-        - org.gnome.TextEditor
-        - io.github.flattool.Warehouse
-        - com.github.tchx84.Flatseal
-        - io.github.kolunmi.Bazaar
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - org.gnome.Loupe
+          - org.gnome.TextEditor
+          - io.github.flattool.Warehouse
+          - com.github.tchx84.Flatseal
+          - io.github.kolunmi.Bazaar
 
