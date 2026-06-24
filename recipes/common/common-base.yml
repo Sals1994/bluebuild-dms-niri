@@ -6,6 +6,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - adw-gtk3-theme
         - xwayland-satellite
         - greetd
         - iwd
@@ -17,6 +18,11 @@ modules:
         - fuse-libs
         - gnome-keyring
         - bootc
+
+  - type: dnf
+    remove:
+      packages:
+        - firefox
 
   - type: dnf
     install:
