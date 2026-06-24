@@ -1,43 +1,48 @@
 modules:
   - type: dnf
     install:
-      - niri
+      packages:
+        - niri
 
+  # ── DankMaterialShell + companions (stable COPR) ──────────────────────────
   - type: dnf
     repos:
       copr:
         - avengemedia/dms
     install:
-      - dms
-      - quickshell
-      - matugen
-      - cliphist
-      - wl-clipboard
-      - dgop
-      - dsearch
-      - dms-greeter
+      packages:
+        - dms
+        - quickshell
+        - matugen
+        - cliphist
+        - wl-clipboard
+        - dgop
+        - dsearch
+        - dms-greeter
 
   - type: dnf
     install:
-      - alacritty
-      - nautilus
-      - file-roller
-      - gvfs
-      - gvfs-mtp
-      - gvfs-smb
-      - gvfs-archive
-      - gvfs-fuse
-      - gvfs-client
-      - gvfs-goa
-      - gvfs-nfs
-      - gvfs-gphoto2
-      - blueman-nautilus
-      - file-roller-nautilus
-      - papers-nautilus
-      - papers
-      - flatpak
-      - flatpak-xdg-utils
+        packages:
+        - alacritty
+        - nautilus
+        - file-roller
+        - gvfs
+        - gvfs-mtp
+        - gvfs-smb
+        - gvfs-archive
+        - gvfs-fuse
+        - gvfs-client
+        - gvfs-goa
+        - gvfs-nfs
+        - gvfs-gphoto2
+        - blueman-nautilus
+        - file-roller-nautilus
+        - papers-nautilus
+        - papers
+        - flatpak
+        - flatpak-xdg-utils
 
+  # ── Flatpak: Flathub setup + base apps ───────────────────────────────────
   - type: default-flatpaks
     notify: true
     system:
