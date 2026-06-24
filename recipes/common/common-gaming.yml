@@ -1,11 +1,4 @@
 modules:
-  - type: dnf
-    repos:
-      nonfree: rpmfusion
-    install:
-      packages:
-        - steam-devices
-
   - type: script
     scripts:
       - install-steam.sh
