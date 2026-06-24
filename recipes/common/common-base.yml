@@ -1,0 +1,75 @@
+modules:
+  - type: dnf
+    repos:
+      non-free: rpmfusion
+    install:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
+
+  - type: dnf
+    install:
+      - xwayland-satellite
+      - polkit
+      - polkit-gnome
+      - greetd
+      - NetworkManager
+      - NetworkManager-wifi
+      - iwd
+      - power-profiles-daemon
+      - upower
+      - xdg-desktop-portal
+      - xdg-desktop-portal-gtk
+      - xdg-desktop-portal-wlr
+      - xdg-desktop-portal-xapp
+      - bash-completion
+      - curl
+      - wget
+      - git
+      - unzip
+      - p7zip
+      - p7zip-plugins
+      - fuse
+      - fuse-libs
+      - gnome-keyring
+      - libsecret
+
+  - type: dnf
+    install:
+      - pipewire
+      - pipewire-alsa
+      - pipewire-pulseaudio
+      - pipewire-jack-audio-connection-kit
+      - wireplumber
+      - pavucontrol
+
+  - type: dnf
+    install:
+      - bluez
+      - bluez-tools
+      - blueman
+
+  - type: dnf
+    repos:
+      copr:
+        - atim/starship
+    install:
+      - starship
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - MapleMono
+      google-fonts:
+        - Inter
+
+  - type: systemd
+    system:
+      enabled:
+        - NetworkManager.service
+        - bluetooth.service
+        - power-profiles-daemon.service
+        - greetd.service
+      disabled:
+        - gdm.service
+        - sddm.service
+        - lightdm.service
