@@ -7,29 +7,15 @@ modules:
     install:
       packages:
         - xwayland-satellite
-        - polkit
-        - polkit-gnome
         - greetd
-        - NetworkManager
-        - NetworkManager-wifi
         - iwd
         - power-profiles-daemon
-        - upower
-        - xdg-desktop-portal
-        - xdg-desktop-portal-gtk
         - xdg-desktop-portal-wlr
         - xdg-desktop-portal-xapp
-        - bash-completion
-        - curl
-        - wget
         - git
-        - unzip
-        - p7zip
-        - p7zip-plugins
         - fuse
         - fuse-libs
         - gnome-keyring
-        - libsecret
 
   - type: dnf
     install:
