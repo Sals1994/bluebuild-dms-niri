@@ -1,11 +1,4 @@
 modules:
-  # Remove podman (replaced by Docker CE)
-  - type: dnf
-    remove:
-      packages:
-        - podman
-        - podman-docker
-
   # Docker CE from official repo
   - type: dnf
     repos:
@@ -30,13 +23,6 @@ modules:
     install:
       packages:
         - code
-
-  # Reinstall bootc after podman removal (bootc depends on podman, so removing
-  # podman also removes bootc as a side effect)
-  - type: dnf
-    install:
-      packages:
-        - bootc
 
   # Enable Docker via socket activation (starts on-demand)
   - type: systemd

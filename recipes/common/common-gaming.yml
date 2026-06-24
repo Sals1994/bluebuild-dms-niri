@@ -1,12 +1,8 @@
 modules:
   - type: dnf
+    repos:
+      nonfree: rpmfusion
     install:
       packages:
         - steam-devices
-
-  - type: default-flatpaks
-    configurations:
-      - notify: true
-        scope: system
-        install:
-          - com.valvesoftware.Steam
+        - steam
