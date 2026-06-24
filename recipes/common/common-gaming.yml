@@ -1,4 +1,12 @@
 modules:
-  - type: script
-    scripts:
-      - install-steam.sh
+  - type: dnf
+    install:
+      packages:
+        - steam-devices
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - com.valvesoftware.Steam
