@@ -17,6 +17,7 @@ _build-bib $target_image $config:
       -v /var/lib/containers/storage:/var/lib/containers/storage \
       "${bib_image}" \
       --type iso \
+      --rootfs xfs \
       --use-librepo=True \
       "${target_image}"
     mkdir -p output
