@@ -1,10 +1,11 @@
 modules:
-  # steam-devices is in Fedora repos; steam requires RPMFusion non-free
   - type: dnf
     repos:
       nonfree: rpmfusion
     install:
       packages:
         - steam-devices
-        - steam
-        - libfdk-aac.i686
+
+  - type: script
+    scripts:
+      - install-steam.sh
