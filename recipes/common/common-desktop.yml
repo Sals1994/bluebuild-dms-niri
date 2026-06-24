@@ -22,7 +22,7 @@ modules:
 
   - type: dnf
     install:
-        packages:
+      packages:
         - alacritty
         - nautilus
         - file-roller

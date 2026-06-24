@@ -56,7 +56,3 @@ modules:
         - bluetooth.service
         - power-profiles-daemon.service
         - greetd.service
-      disabled:
-        - gdm.service
-        - sddm.service
-        - lightdm.service
