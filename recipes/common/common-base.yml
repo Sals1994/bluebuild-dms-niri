@@ -16,6 +16,7 @@ modules:
         - fuse
         - fuse-libs
         - gnome-keyring
+        - bootc
 
   - type: dnf
     install:
