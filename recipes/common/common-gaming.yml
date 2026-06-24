@@ -4,6 +4,7 @@ modules:
     repos:
       nonfree: rpmfusion
     install:
+      install-weak-deps: false
       packages:
         - steam-devices
         - steam
