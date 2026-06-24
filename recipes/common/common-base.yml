@@ -18,7 +18,30 @@ modules:
         - fuse-libs
         - gnome-keyring
         - bootc
+        - exfatprogs
 
+  - type: dnf
+    install:
+      install-weak-deps: false
+      packages:
+        - just
+        - powerstat
+        - gnome-disk-utility
+        - xdg-user-dirs
+        - dbus-tools
+        - dbus-daemon
+        - qt5-qtwayland
+        - qt6-qtwayland
+        - vulkan-validation-layers
+        - vulkan-tools
+        - google-noto-emoji-fonts
+        - ddcutil
+        - openssl
+        - alsa-firmware
+        - distrobox
+        - firewall-config
+        - android-tools
+        
   - type: dnf
     remove:
       packages:
