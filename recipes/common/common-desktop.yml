@@ -1,0 +1,52 @@
+modules:
+  - type: dnf
+    install:
+      - niri
+
+  - type: dnf
+    repos:
+      copr:
+        - avengemedia/dms
+    install:
+      - dms
+      - quickshell
+      - matugen
+      - cliphist
+      - wl-clipboard
+      - dgop
+      - dsearch
+      - dms-greeter
+
+  - type: dnf
+    install:
+      - alacritty
+      - nautilus
+      - file-roller
+      - gvfs
+      - gvfs-mtp
+      - gvfs-smb
+      - gvfs-archive
+      - gvfs-fuse
+      - gvfs-client
+      - gvfs-goa
+      - gvfs-nfs
+      - gvfs-gphoto2
+      - blueman-nautilus
+      - file-roller-nautilus
+      - papers-nautilus
+      - papers
+      - flatpak
+      - flatpak-xdg-utils
+
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      install:
+        - org.gnome.Loupe
+        - org.gnome.TextEditor
+        - io.github.flattool.Warehouse
+        - com.github.tchx84.Flatseal
+        - io.github.kolunmi.Bazaar
+
