@@ -31,6 +31,13 @@ modules:
       packages:
         - code
 
+  # Reinstall bootc after podman removal (bootc depends on podman, so removing
+  # podman also removes bootc as a side effect)
+  - type: dnf
+    install:
+      packages:
+        - bootc
+
   # Enable Docker via socket activation (starts on-demand)
   - type: systemd
     system:
