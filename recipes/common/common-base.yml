@@ -1,59 +1,61 @@
 modules:
   - type: dnf
     repos:
-      non-free: rpmfusion
-    install:
-      - rpmfusion-free-release
-      - rpmfusion-nonfree-release
+      nonfree: rpmfusion
 
   - type: dnf
     install:
-      - xwayland-satellite
-      - polkit
-      - polkit-gnome
-      - greetd
-      - NetworkManager
-      - NetworkManager-wifi
-      - iwd
-      - power-profiles-daemon
-      - upower
-      - xdg-desktop-portal
-      - xdg-desktop-portal-gtk
-      - xdg-desktop-portal-wlr
-      - xdg-desktop-portal-xapp
-      - bash-completion
-      - curl
-      - wget
-      - git
-      - unzip
-      - p7zip
-      - p7zip-plugins
-      - fuse
-      - fuse-libs
-      - gnome-keyring
-      - libsecret
+      packages:
+        - xwayland-satellite
+        - polkit
+        - polkit-gnome
+        - greetd
+        - NetworkManager
+        - NetworkManager-wifi
+        - iwd
+        - power-profiles-daemon
+        - upower
+        - xdg-desktop-portal
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-wlr
+        - xdg-desktop-portal-xapp
+        - bash-completion
+        - curl
+        - wget
+        - git
+        - unzip
+        - p7zip
+        - p7zip-plugins
+        - fuse
+        - fuse-libs
+        - gnome-keyring
+        - libsecret
 
   - type: dnf
     install:
-      - pipewire
-      - pipewire-alsa
-      - pipewire-pulseaudio
-      - pipewire-jack-audio-connection-kit
-      - wireplumber
-      - pavucontrol
+      packages:
+        - pipewire
+        - pipewire-alsa
+        - pipewire-jack-audio-connection-kit
+        - pipewire-pulseaudio
+        - wireplumber
+        - pavucontrol
 
   - type: dnf
     install:
-      - bluez
-      - bluez-tools
-      - blueman
+      packages:
+        - bluez
+        - bluez-tools
+        - blueman
 
+  # ── Shell: Bash + Starship prompt ─────────────────────────────────────────
   - type: dnf
     repos:
       copr:
         - atim/starship
     install:
-      - starship
+      packages:
+        - starship
 
   - type: fonts
     fonts:
@@ -62,6 +64,7 @@ modules:
       google-fonts:
         - Inter
 
+  # ── Systemd services: enable at image build time ──────────────────────────
   - type: systemd
     system:
       enabled:
