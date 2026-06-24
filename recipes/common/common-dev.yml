@@ -1,0 +1,38 @@
+modules:
+  # Remove podman (replaced by Docker CE)
+  - type: dnf
+    remove:
+      packages:
+        - podman
+        - podman-docker
+
+  # Docker CE from official repo
+  - type: dnf
+    repos:
+      keys:
+        - https://download.docker.com/linux/fedora/gpg
+      files:
+        - https://download.docker.com/linux/fedora/docker-ce.repo
+    install:
+      packages:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+      allow-erasing: true
+
+  # VS Code — repo file provided via files/system/etc/yum.repos.d/vscode.repo
+  - type: dnf
+    repos:
+      keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
+    install:
+      packages:
+        - code
+
+  # Enable Docker via socket activation (starts on-demand)
+  - type: systemd
+    system:
+      enabled:
+        - docker.socket

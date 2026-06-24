@@ -1,0 +1,9 @@
+modules:
+  # steam-devices is in Fedora repos; steam requires RPMFusion non-free
+  - type: dnf
+    repos:
+      nonfree: rpmfusion
+    install:
+      packages:
+        - steam-devices
+        - steam
