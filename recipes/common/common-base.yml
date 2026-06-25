@@ -19,6 +19,7 @@ modules:
         - gnome-keyring
         - bootc
         - exfatprogs
+        - gnome-keyring-pam
 
   - type: dnf
     install:
